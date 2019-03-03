@@ -1,0 +1,7 @@
+FROM subspacelabs/ubuntu:arm64v8
+
+WORKDIR /code
+
+COPY docker/build.sh /build.sh
+
+RUN ["/build.sh"]
