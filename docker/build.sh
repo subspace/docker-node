@@ -7,6 +7,8 @@ apt-get install -y --no-install-recommends curl ca-certificates gnupg
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install -y nodejs
 # Dependencies for installing building NPM packages with Node.js bindings that is often required
-apt-get install -y --no-install-recommends git g++ make
+if [ $DEV ]; then
+    apt-get install -y --no-install-recommends git g++ make
+fi
 apt-get clean
 rm -rf /var/lib/apt/lists/*
