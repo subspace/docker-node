@@ -21,7 +21,7 @@ docker build -t subspacelabs/node:10 .
 docker build -t subspacelabs/node:10-dev -f Dockerfile-dev .
 ```
 
-### Building Docker image for Raspberry PI (32-bit ARMv7)
+### Building Docker image for 32-bit ARMv7
 In order to get source code and build an image run:
 ```bash
 git clone git@github.com:subspace/docker-node.git
