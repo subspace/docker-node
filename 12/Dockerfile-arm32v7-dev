@@ -4,6 +4,6 @@ WORKDIR /code
 
 COPY docker/build.sh /build.sh
 
-RUN ["/build.sh"]
-
 ENV DEV=true
+
+RUN ["/build.sh"]
