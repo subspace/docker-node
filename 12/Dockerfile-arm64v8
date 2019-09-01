@@ -1,8 +1,6 @@
-FROM subspacelabs/ubuntu:arm32v7
+FROM subspacelabs/ubuntu:arm64v8
 
 WORKDIR /code
-
-ENV DEV=true
 
 COPY docker/build.sh /build.sh
 

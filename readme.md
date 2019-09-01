@@ -1,4 +1,4 @@
-Simple Docker image with Node.js v10 installed, using `subspacelabs/ubuntu` as base for efficient disk utilization
+Simple Docker images with Node.js v10/v12 installed, using `subspacelabs/ubuntu` as base for efficient disk utilization
 
 Just pull one of the images from Docker Hub:
 ```
@@ -8,6 +8,12 @@ subspacelabs/node:10-arm64v8
 subspacelabs/node:10-dev
 subspacelabs/node:10-arm32v7-dev
 subspacelabs/node:10-arm64v8-dev
+subspacelabs/node:12
+subspacelabs/node:12-arm32v7
+subspacelabs/node:12-arm64v8
+subspacelabs/node:12-dev
+subspacelabs/node:12-arm32v7-dev
+subspacelabs/node:12-arm64v8-dev
 ```
 
 `*-dev` images have `git`, `g++` and `make` installed for building packages with native Node.js bindings.
@@ -16,18 +22,24 @@ subspacelabs/node:10-arm64v8-dev
 In order to get source code and build an image run:
 ```bash
 git clone git@github.com:subspace/docker-node.git
-cd docker-node:10
+cd docker-node/10
 docker build -t subspacelabs/node:10 .
 docker build -t subspacelabs/node:10-dev -f Dockerfile-dev .
+cd ../12
+docker build -t subspacelabs/node:12 .
+docker build -t subspacelabs/node:12-dev -f Dockerfile-dev .
 ```
 
 ### Building Docker image for 32-bit ARMv7
 In order to get source code and build an image run:
 ```bash
 git clone git@github.com:subspace/docker-node.git
-cd docker-node:10
+cd docker-node/10
 docker build -t subspacelabs/node:10-arm32v7 -f Dockerfile-arm32v7 .
 docker build -t subspacelabs/node:10-arm32v7-dev -f Dockerfile-arm32v7-dev .
+cd ../12
+docker build -t subspacelabs/node:12-arm32v7 -f Dockerfile-arm32v7 .
+docker build -t subspacelabs/node:12-arm32v7-dev -f Dockerfile-arm32v7-dev .
 ```
 
 
@@ -35,7 +47,10 @@ docker build -t subspacelabs/node:10-arm32v7-dev -f Dockerfile-arm32v7-dev .
 In order to get source code and build an image run:
 ```bash
 git clone git@github.com:subspace/docker-node.git
-cd docker-node:10
+cd docker-node/10
 docker build -t subspacelabs/node:10-arm64v8 -f Dockerfile-arm64v8 .
 docker build -t subspacelabs/node:10-arm64v8-dev -f Dockerfile-arm64v8-dev .
+cd ../12
+docker build -t subspacelabs/node:12-arm64v8 -f Dockerfile-arm64v8 .
+docker build -t subspacelabs/node:12-arm64v8-dev -f Dockerfile-arm64v8-dev .
 ```
